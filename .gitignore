@@ -1,0 +1,7 @@
+# Local and temporary files
+scratch/
+scratch_crops/
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db
