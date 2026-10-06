@@ -1,8 +1,10 @@
 # Leben am Tollensetal – Bürgerinitiative (tollensetal.org)
 
-Modernisierte, barrierefreie und vollständig responsive Website für die **Bürgerinitiative „Leben am Tollensetal“** (Alt Tellin / Hohenbüssow, Mecklenburg-Vorpommern).
+Modernisierte, barrierefreie und responsive Website für die **Bürgerinitiative „Leben am Tollensetal“** (Alt Tellin / Hohenbüssow, Mecklenburg-Vorpommern).
 
-Die Website dokumentiert den über ein Jahrzehnt währenden Widerstand gegen die industrielle Megafabrik Alt Tellin, bewahrt die historischen Dokumente, bietet eine Chronik bis zur verheerenden Brandkatastrophe vom 30. März 2021 und setzt sich für den Schutz der Flusslandschaft Tollensetal ein.
+> [!NOTE]
+> **Branch `variant/original-layout` (Redaktions-Ausgabe):**  
+> Diese Variante greift das **originale Zeitungs- und Tabellenlayout** aus den Jahren 2008–2010 mit Monospace-Serifen (`Courier New`), markanten Schraffurbalken (`///`), dem ikonischen blauen Navigationsblock, der schwarzen „VERHINDERN!“-Box und dem rosa getönten Kurznachrichten-Streifen auf – jedoch umgesetzt in modernem, barrierefreiem und mobile-fähigem HTML5/CSS/JS.
 
 ---
 
