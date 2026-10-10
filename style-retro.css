@@ -1,0 +1,601 @@
+/* ==========================================================================
+   Leben am Tollensetal - Bürgerinitiative
+   Variante: Original-Redaktionslayout (Monospace / Courier / Zeitungsstil)
+   ========================================================================== */
+
+:root {
+  --font-mono: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #cc0000;
+  --color-red-dark: #990000;
+  --color-blue: #0088ff;
+  --color-blue-dark: #0055aa;
+  --color-right-bg: #fff0f5;   /* Feiner Rosaton der Original-Rechtsspalte */
+  --color-border: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #e5e5e5; /* Ruhiger Hintergrund für den Zeitungsbogen */
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-black);
+  background-color: #ffffff;
+  max-width: 1160px;
+  margin: 0 auto;
+  border-left: 2px solid #333333;
+  border-right: 2px solid #333333;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Ticker / Eilmeldung 30.03.2021
+   ========================================================================== */
+
+.ticker-bar {
+  background-color: var(--color-black);
+  color: #ff4444;
+  padding: 8px 15px;
+  font-weight: bold;
+  font-size: 13px;
+  border-bottom: 2px solid var(--color-red);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ticker-text {
+  letter-spacing: 0.5px;
+}
+
+.ticker-btn {
+  background-color: var(--color-red);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.ticker-btn:hover {
+  background-color: #ffffff;
+  color: var(--color-red);
+}
+
+/* ==========================================================================
+   Schraffierte Trenner (Authentischer /// Look)
+   ========================================================================== */
+
+.hatch-v {
+  width: 14px;
+  min-width: 14px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #000 0px,
+    #000 1.5px,
+    #fff 1.5px,
+    #fff 5px
+  );
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.hatch-h {
+  height: 14px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #000 0px,
+    #000 1.5px,
+    #fff 1.5px,
+    #fff 5px
+  );
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 12px 0;
+}
+
+/* ==========================================================================
+   Haupt-Tabellen-Raster (3 Spalten)
+   ========================================================================== */
+
+.paper-grid {
+  display: flex;
+  width: 100%;
+}
+
+.col-left {
+  width: 225px;
+  min-width: 225px;
+  padding: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.col-center {
+  flex: 1;
+  padding: 16px 20px;
+  background-color: #ffffff;
+}
+
+.col-right {
+  width: 245px;
+  min-width: 245px;
+  padding: 14px;
+  background-color: var(--color-right-bg);
+  border-left: 1px dashed #ccaabb;
+}
+
+/* ==========================================================================
+   Linke Spalte (Menu, Verhindern-Box, Landrat, Impressum)
+   ========================================================================== */
+
+.blue-nav-box {
+  background-color: var(--color-blue);
+  padding: 16px 14px;
+  border: 1px solid #0055aa;
+}
+
+.nav-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-btn {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 4px 6px;
+  transition: background 0.15s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background-color: #0055aa;
+  color: #ffff00;
+}
+
+/* Box "VERHINDERN!" */
+.verhindern-box {
+  background-color: var(--color-black);
+  color: #ffffff;
+  padding: 14px 12px;
+  border: 2px solid var(--color-black);
+}
+
+.verhindern-title {
+  color: #ff3333;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.verhindern-text {
+  font-size: 11.5px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.verhindern-fact {
+  margin-bottom: 8px;
+  font-size: 11.5px;
+}
+
+.verhindern-fact strong {
+  color: #ffcc00;
+  display: block;
+}
+
+.verhindern-bottom {
+  border-top: 1px dashed #666666;
+  padding-top: 8px;
+  margin-top: 6px;
+  font-size: 11px;
+  font-style: italic;
+  color: #cccccc;
+}
+
+/* Landrat Meldung */
+.landrat-box {
+  border: 1px solid var(--color-red);
+  padding: 10px;
+  background-color: #fffafa;
+}
+
+.landrat-title {
+  color: var(--color-red);
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.landrat-text {
+  color: #cc0000;
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+/* Blaues Hinweisfeld mit Asterisk */
+.note-blue-box {
+  font-size: 11px;
+  color: #0055cc;
+  line-height: 1.35;
+}
+
+.note-blue-box a {
+  color: #0055cc;
+  text-decoration: underline;
+}
+
+.impressum-mini {
+  font-size: 10.5px;
+  color: #0055cc;
+  border-top: 1px dotted #99bbff;
+  padding-top: 8px;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
+/* Medow 2006 Bildbox */
+.medow-box {
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.medow-box img {
+  width: 100%;
+  display: block;
+}
+
+.medow-caption {
+  background-color: var(--color-black);
+  color: #ffffff;
+  font-size: 10px;
+  padding: 6px 8px;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Mittlere Spalte (Dokumentation & Hauptartikel)
+   ========================================================================== */
+
+.banner-headline {
+  color: var(--color-red);
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-red);
+  padding-bottom: 8px;
+}
+
+.article-section {
+  margin-bottom: 18px;
+}
+
+.article-section h2,
+.article-section h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: var(--color-black);
+}
+
+.article-section p {
+  margin-bottom: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.45;
+}
+
+.article-list {
+  list-style: none;
+  margin: 8px 0 12px 10px;
+}
+
+.article-list li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.article-list li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Zentriertes Hauptfoto Sternmarsch */
+.main-photo-wrap {
+  margin: 16px 0;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.main-photo-wrap img {
+  width: 100%;
+  display: block;
+}
+
+.photo-caption {
+  padding: 6px 10px;
+  font-size: 11.5px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Rechte Spalte (Kurznachrichten, Aufrufe, Fotostreifen)
+   ========================================================================== */
+
+.right-news-box {
+  margin-bottom: 18px;
+}
+
+.right-item {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ccaabb;
+}
+
+.right-item:last-child {
+  border-bottom: none;
+}
+
+.right-title {
+  color: var(--color-red);
+  font-size: 13.5px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.right-title a {
+  color: var(--color-red);
+  text-decoration: none;
+}
+
+.right-title a:hover {
+  text-decoration: underline;
+}
+
+.right-text {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: #330011;
+}
+
+.right-highlight {
+  background-color: #ffe0eb;
+  padding: 6px 8px;
+  border-left: 3px solid var(--color-red);
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+/* Fotostapel rechts */
+.right-photo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.stack-img-card {
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.stack-img-card img {
+  width: 100%;
+  display: block;
+}
+
+.stack-img-label {
+  font-size: 10px;
+  padding: 3px 6px;
+  background: #fdfdfd;
+  border-top: 1px solid #eeeeee;
+  color: #444444;
+}
+
+/* ==========================================================================
+   Tab-Ansichten: Aktuelles, Links, Kontakt, Dokumente
+   ========================================================================== */
+
+.tab-content-panel {
+  display: none;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.tab-content-panel.active {
+  display: block;
+}
+
+/* Tabellentypischer Stil für Unterseiten */
+.retro-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border: 1px solid var(--color-border);
+}
+
+.retro-table th,
+.retro-table td {
+  border: 1px solid var(--color-border);
+  padding: 10px 14px;
+  vertical-align: top;
+  font-size: 12.5px;
+}
+
+.retro-table th {
+  background-color: #f0f0f0;
+  text-align: left;
+  font-weight: bold;
+}
+
+.btn-retro {
+  display: inline-block;
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  color: #000;
+  padding: 4px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-retro:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Brandkatastrophe-Modal
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window {
+  background-color: #000000;
+  color: #ffffff;
+  border: 3px solid var(--color-red);
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  position: relative;
+  font-family: var(--font-mono);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: var(--color-red);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.modal-window img {
+  width: 100%;
+  margin: 15px 0;
+  border: 1px solid #444444;
+}
+
+/* ==========================================================================
+   Fußzeile
+   ========================================================================== */
+
+.paper-footer {
+  background-color: #f4f4f4;
+  border-top: 2px solid var(--color-black);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 11px;
+}
+
+.paper-footer a {
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Responsive Optimierung für mobile Bildschirme
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .paper-grid {
+    flex-direction: column;
+  }
+  
+  .hatch-v {
+    display: none;
+  }
+
+  .col-left,
+  .col-right {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .col-left {
+    border-bottom: 2px solid var(--color-black);
+  }
+
+  .col-right {
+    border-top: 2px solid var(--color-black);
+    border-left: none;
+  }
+
+  .right-photo-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+}

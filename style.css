@@ -4,27 +4,27 @@
    ========================================================================== */
 
 :root {
-  /* Farbpalette */
-  --color-primary: #1e3a5f;       /* Preußischblau / Tollense-Blau */
-  --color-primary-light: #2563eb; /* Akzent-Blau */
-  --color-primary-dark: #0f172a;  /* Tiefes Schieferblau */
+  /* Naturverbundene, organische Farbpalette (Erde, Wald, Schilf, Terracotta) */
+  --color-primary: #2d4c38;       /* Tiefes Schilf- & Waldgrün */
+  --color-primary-light: #446e50; /* Lind- & Wiesengrün */
+  --color-primary-dark: #1b3023;  /* Dunkles Tannengrün */
   
-  --color-accent-green: #15803d;  /* Natur- & Wiesen-Grün */
-  --color-accent-green-bg: #f0fdf4;
+  --color-accent-green: #3b6b47;
+  --color-accent-green-bg: #edf3ee;
   
-  --color-alert: #b91c1c;         /* Mahn- / Protest-Rot */
-  --color-alert-dark: #991b1b;
-  --color-alert-bg: #fef2f2;
-  --color-alert-border: #fecaca;
+  --color-alert: #963b2c;         /* Warmes Ziegelrot / Terracotta / Feldbrand */
+  --color-alert-dark: #7b2c20;
+  --color-alert-bg: #fbf2ef;
+  --color-alert-border: #eccfc8;
   
-  --color-bg: #f8fafc;            /* Heller, augenfreundlicher Hintergrund */
+  --color-bg: #f9f7f2;            /* Ruhiges, warmes Naturweiß / Pergament */
   --color-surface: #ffffff;       /* Kacheln & Karten */
-  --color-surface-alt: #f1f5f9;   /* Dezent abgesetzte Bereiche */
+  --color-surface-alt: #f0ebe1;   /* Warmes Sand- & Kalkbeige */
   
-  --color-text: #334155;          /* Haupttext für maximale Lesbarkeit */
-  --color-text-dark: #0f172a;     /* Überschriften */
-  --color-text-muted: #64748b;    /* Metadaten & Untertitel */
-  --color-border: #e2e8f0;        /* Feine Trennlinien */
+  --color-text: #2f2b26;          /* Warmes Rindengrau / Erddunkel */
+  --color-text-dark: #1e1b18;     /* Tiefes Erd-Dunkel */
+  --color-text-muted: #6e665d;    /* Warmes Steingrau */
+  --color-border: #ded8cb;        /* Sanfte Naturleinen-Trennlinien */
   
   /* Typografie (Datenschutzfreundlicher, extrem schneller System-Stack) */
   --font-heading: 'Georgia', 'Cambria', 'Times New Roman', serif;
@@ -33,9 +33,9 @@
   
   /* Übergänge & Schatten */
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
@@ -119,8 +119,8 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--color-primary-light);
-  background-color: #e0f2fe;
+  color: var(--color-primary);
+  background-color: var(--color-accent-green-bg);
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   margin-bottom: 0.85rem;
@@ -145,7 +145,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(249, 247, 242, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition);
@@ -237,7 +237,7 @@ img {
 
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #0f2b48 0%, #1e3a5f 50%, #204e79 100%);
+  background: linear-gradient(135deg, #1b3023 0%, #284432 50%, #365641 100%);
   color: #ffffff;
   padding: 5.5rem 0 4.5rem;
   overflow: hidden;
@@ -268,8 +268,8 @@ img {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.1);
+  color: #d6e4d8;
+  background: rgba(255, 255, 255, 0.12);
   padding: 0.4rem 0.9rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -279,9 +279,9 @@ img {
 .hero-tag-dot {
   width: 8px;
   height: 8px;
-  background-color: #38bdf8;
+  background-color: #8ab692;
   border-radius: 50%;
-  box-shadow: 0 0 8px #38bdf8;
+  box-shadow: 0 0 8px #8ab692;
 }
 
 .hero-title {
@@ -294,7 +294,7 @@ img {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: #cbd5e1;
+  color: #d1ded4;
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 600px;
@@ -322,17 +322,17 @@ img {
 }
 
 .btn-primary {
-  background-color: #ef4444;
+  background-color: var(--color-alert);
   color: #ffffff;
-  border-color: #ef4444;
-  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+  border-color: var(--color-alert);
+  box-shadow: 0 4px 12px rgba(150, 59, 44, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: #dc2626;
+  background-color: var(--color-alert-dark);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.5);
+  box-shadow: 0 6px 16px rgba(150, 59, 44, 0.35);
 }
 
 .btn-secondary {
@@ -588,7 +588,7 @@ img {
   bottom: 0;
   left: 30px;
   width: 3px;
-  background: linear-gradient(180deg, var(--color-primary-light) 0%, #94a3b8 80%, var(--color-alert) 100%);
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, #c4bcaf 80%, var(--color-alert) 100%);
 }
 
 .timeline-item {
@@ -1012,9 +1012,9 @@ img {
 
 .footer {
   background-color: var(--color-primary-dark);
-  color: #94a3b8;
+  color: #c0cfc3;
   padding: 4rem 0 2rem;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #284432;
 }
 
 .footer-grid {
@@ -1053,7 +1053,7 @@ img {
 }
 
 .footer-links a {
-  color: #94a3b8;
+  color: #c0cfc3;
   font-size: 0.9rem;
   text-decoration: none;
   transition: var(--transition);
@@ -1066,7 +1066,7 @@ img {
 
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #284432;
   display: flex;
   justify-content: space-between;
   align-items: center;
